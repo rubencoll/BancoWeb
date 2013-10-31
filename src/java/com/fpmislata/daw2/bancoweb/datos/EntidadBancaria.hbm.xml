@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<hibernate-mapping>
+  <class name="com.fpmislata.daw2.bancoweb.negocio.EntidadBancaria" table="EntidadBancaria">
+    <id column="idEntidadBancaria" name="idEntidadBancaria" type="integer"/>
+    <property name="codigoEntidadBancaria"/>
+    <property name="nombre"/>
+    <property name="cif"/>
+  </class>
+</hibernate-mapping>
