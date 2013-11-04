@@ -11,7 +11,7 @@
     //Prueba para buscar una entidad Bancaria mediante ID
 
     int idEntidadBancariaBuscarda = 3;
-    HibernateUtil.openSessionAndBindToThread();
+    
     EntidadBancariaDAO entidadBancariaDAO = new EntidadBancariaDAOImplHibernate();
     //GenericDAO genericDao = new EntidadBancariaDAOImplJDBC();
 
@@ -52,7 +52,7 @@
 
     entidadBancariaBuscadaGet = entidadBancariaDAO.findByNombre(nombreB);
 
-    HibernateUtil.closeSessionAndUnbindFromThread();
+   
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

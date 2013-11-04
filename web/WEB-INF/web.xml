@@ -16,8 +16,16 @@
             com.fpmislata.daw2.bancoweb.datos.HibernateContextListenerAndFilter
         </listener-class>
     </listener>
-    
-    
+    <filter>
+        <filter-name>HibernateContextListenerAndFilter</filter-name>
+        <listener-class>
+            com.fpmislata.daw2.bancoweb.datos.HibernateContextListenerAndFilter
+        </listener-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>HibernateContextListenerAndFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>  
     
     
 </web-app>
