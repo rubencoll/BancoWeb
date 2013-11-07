@@ -53,20 +53,6 @@
     entidadBancariaBuscadaGet = entidadBancariaDAO.findByNombre(nombreB);
 
 
-    //Borrar
-
-    int confirmar = Interger.parseInt(request.getParameter("confirmDelete"));
-    String borrar = request.getParameter("borrar");
-
-   // if (!confirmar.isEmpty()) {
-
- //       EntidadBancaria entidadBancariaBorrar = new EntidadBancaria();
- //       entidadBancariaBorrar = entidadBancariaDAO.delete(confirmar);
-  //  }
-
-
-
-
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -78,6 +64,7 @@
         <link href="css/bootstrap.css" rel="stylesheet" >
         <style type="text/css">
             .cCentrado{
+                float:left;
                 text-align: center;
                 border:1px solid black;
                 border-color: blue ;
@@ -100,9 +87,15 @@
             <form class="form-search" method="GET" action="index.jsp">
                 <input name="nombre" type="text" class="input-medium search-query">
                 <button type="submit" class="btn">Buscar</button>
+               
             </form>
         </div>
+        <div class="cCentrado" >
+             <a href="nuevo.jsp" class="btn" >Insertar Entidad</a>
+        </div>
+        <br /><br />
         <hr>
+        <br /><br />
         <h1>Entidades Bancarias</h1>
 
         <table class="table">
@@ -119,43 +112,42 @@
                 <td><%= entidadBancaria.getIdEntidadBancaria()%></td>
                 <td><%= entidadBancaria.getCodigoEntidadBancaria()%></td>
                 <td><%= entidadBancaria.getNombre()%></td>
-                <td></td>       
+                <td><%= entidadBancaria.getTipoEntidadBancaria()%></td>      
                 <td><%= entidadBancaria.getCif()%></td>
-                <td><%= confirmar%></td>
+
             </tr>
             <%
                 }
             %>
         </table>
         <hr>
-        <form action="index.jsp" method="POST">
-            <h1>Entidad Bancaria Buscada Por Get de URL</h1>
-            <h3><%=nombreB%></h3>
-            <table class="table">
-                <th>IDENTIFICADOR</th>
-                <th>CODIGO</th>
-                <th>NOMBRE</th>
-                <th>TIPO</th>
-                <th>CIF</th>
-                <th><input type="submit" name="borrar" value="Borrar"  /></th>
-                    <%
-
-                        for (EntidadBancaria entidadBancaria : entidadBancariaBuscadaGet) {
-                    %>
-                <tr>
-                    <td><%= entidadBancaria.getIdEntidadBancaria()%></td>
-                    <td><%= entidadBancaria.getCodigoEntidadBancaria()%></td>
-                    <td><%= entidadBancaria.getNombre()%></td>
-                    <td></td>       
-                    <td><%= entidadBancaria.getCif()%> </td>
-                    <td>    <input type="checkbox" name="confirmDelete" value="<%= entidadBancaria.getIdEntidadBancaria()%>" /></td>
-                </tr>
+        <h1>Entidad Bancaria Buscada Por Get de URL</h1>
+        <h3><%=nombreB%></h3>
+        <table class="table">
+            <th>IDENTIFICADOR</th>
+            <th>CODIGO</th>
+            <th>NOMBRE</th>
+            <th>TIPO</th>
+            <th>CIF</th>
+            <th>BORRAR</th>
                 <%
-                    }
-                %>
 
-            </table>
-        </form>
+                    for (EntidadBancaria entidadBancaria : entidadBancariaBuscadaGet) {
+                %>
+            <tr>
+                <td><%= entidadBancaria.getIdEntidadBancaria()%></td>
+                <td><%= entidadBancaria.getCodigoEntidadBancaria()%></td>
+                <td><%= entidadBancaria.getNombre()%></td>
+                <td><%= entidadBancaria.getTipoEntidadBancaria()%></td>       
+                <td><%= entidadBancaria.getCif()%> </td>
+                <td><a href="borrar.jsp?idEntidadBancaria=<%= entidadBancaria.getIdEntidadBancaria()%>" class="btn" >Borrar</a></td>
+            </tr>
+            <%
+                }
+            %>
+
+        </table>
+
     </body>
 </html>
 

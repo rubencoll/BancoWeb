@@ -19,7 +19,7 @@ public class EntidadBancaria implements Serializable {
     private String codigoEntidadBancaria;
     private String nombre;
     private String cif;
-   // private TipoEntidadBancaria tipoEntidadBancaria;
+    private TipoEntidadBancaria tipoEntidadBancaria;
 
     //Constructor Vacio
     public EntidadBancaria() {
@@ -74,11 +74,11 @@ public class EntidadBancaria implements Serializable {
         this.cif = cif;
     }
 
-   /* public TipoEntidadBancaria getTipoEntidadBancaria() {
+    public TipoEntidadBancaria getTipoEntidadBancaria() {
         return tipoEntidadBancaria;
     }
 
     public void setTipoEntidadBancaria(TipoEntidadBancaria tipoEntidadBancaria) {
         this.tipoEntidadBancaria = tipoEntidadBancaria;
-    }*/
+    }
 }
