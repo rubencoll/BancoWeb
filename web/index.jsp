@@ -11,7 +11,7 @@
     //Prueba para buscar una entidad Bancaria mediante ID
 
     int idEntidadBancariaBuscarda = 3;
-    
+
     EntidadBancariaDAO entidadBancariaDAO = new EntidadBancariaDAOImplHibernate();
     //GenericDAO genericDao = new EntidadBancariaDAOImplJDBC();
 
@@ -22,7 +22,7 @@
     int idEntidadBancaria = entidadBancariaBuscada.getIdEntidadBancaria();
     String codigo = entidadBancariaBuscada.getCodigoEntidadBancaria();
     String nombre = entidadBancariaBuscada.getNombre();
-   // TipoEntidadBancaria tipoEntidadBancaria = entidadBancariaBuscada.getTipoEntidadBancaria();
+    // TipoEntidadBancaria tipoEntidadBancaria = entidadBancariaBuscada.getTipoEntidadBancaria();
 
 
 
@@ -52,7 +52,21 @@
 
     entidadBancariaBuscadaGet = entidadBancariaDAO.findByNombre(nombreB);
 
-   
+
+    //Borrar
+
+    int confirmar = Interger.parseInt(request.getParameter("confirmDelete"));
+    String borrar = request.getParameter("borrar");
+
+   // if (!confirmar.isEmpty()) {
+
+ //       EntidadBancaria entidadBancariaBorrar = new EntidadBancaria();
+ //       entidadBancariaBorrar = entidadBancariaDAO.delete(confirmar);
+  //  }
+
+
+
+
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -107,35 +121,41 @@
                 <td><%= entidadBancaria.getNombre()%></td>
                 <td></td>       
                 <td><%= entidadBancaria.getCif()%></td>
+                <td><%= confirmar%></td>
             </tr>
             <%
                 }
             %>
         </table>
         <hr>
-        <h1>Entidad Bancaria Buscada Por Get de URL</h1>
-        <h3><%=nombreB%></h3>
-        <table class="table">
-            <th>IDENTIFICADOR</th>
-            <th>CODIGO</th>
-            <th>NOMBRE</th>
-            <th>TIPO</th>
-            <th>CIF</th>
-                <%
+        <form action="index.jsp" method="POST">
+            <h1>Entidad Bancaria Buscada Por Get de URL</h1>
+            <h3><%=nombreB%></h3>
+            <table class="table">
+                <th>IDENTIFICADOR</th>
+                <th>CODIGO</th>
+                <th>NOMBRE</th>
+                <th>TIPO</th>
+                <th>CIF</th>
+                <th><input type="submit" name="borrar" value="Borrar"  /></th>
+                    <%
 
-                    for (EntidadBancaria entidadBancaria : entidadBancariaBuscadaGet) {
+                        for (EntidadBancaria entidadBancaria : entidadBancariaBuscadaGet) {
+                    %>
+                <tr>
+                    <td><%= entidadBancaria.getIdEntidadBancaria()%></td>
+                    <td><%= entidadBancaria.getCodigoEntidadBancaria()%></td>
+                    <td><%= entidadBancaria.getNombre()%></td>
+                    <td></td>       
+                    <td><%= entidadBancaria.getCif()%> </td>
+                    <td>    <input type="checkbox" name="confirmDelete" value="<%= entidadBancaria.getIdEntidadBancaria()%>" /></td>
+                </tr>
+                <%
+                    }
                 %>
-            <tr>
-                <td><%= entidadBancaria.getIdEntidadBancaria()%></td>
-                <td><%= entidadBancaria.getCodigoEntidadBancaria()%></td>
-                <td><%= entidadBancaria.getNombre()%></td>
-                <td></td>       
-                <td><%= entidadBancaria.getCif()%></td>
-            </tr>
-            <%
-                }
-            %>
-        </table>
+
+            </table>
+        </form>
     </body>
 </html>
 

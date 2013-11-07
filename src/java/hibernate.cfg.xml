@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.datasource">java:/comp/env/jdbc/</property>  
+    <property name="connection.datasource">java:/comp/env/jdbc/bancoweb</property>  
     <!--<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="connection.url">jdbc:mysql://localhost/banco</property>
     <property name="connection.username">root</property>
