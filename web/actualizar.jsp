@@ -48,10 +48,10 @@
                 <input type="text" placeholder="CIF de la Entidad." name="cif" value="<%=cif%>">   
                 <br /><br />
                 <select name="tipo">
-                    <option value="BANCO" <%if(tipoEntidadBancaria.BANCO){out.print('selected');}%> >BANCO</option>
-                    <option value="CAJA_DE_AHORRO" <%if(tipoEntidadBancaria.CAJA_DE_AHORRO){%> selected <%}%>>CAJA_DE_AHORRO</option>
-                    <option value="COOPERATIVAS_DE_CREDITO" <%if(tipoEntidadBancaria.COOPERATIVAS_DE_CREDITO){%> selected <%}%>>COOPERATIVAS_DE_CREDITO</option>
-                    <option value="ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO" <%if(tipoEntidadBancaria.ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO){%>selected <%}%> >ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO</option>              
+                    <option value="BANCO" <%if(tipoEntidadBancaria==tipoEntidadBancaria.BANCO){out.print("selected");}%> >BANCO</option>
+                    <option value="CAJA_DE_AHORRO" <%if(tipoEntidadBancaria==tipoEntidadBancaria.CAJA_DE_AHORRO){out.print("selected");}%>>CAJA_DE_AHORRO</option>
+                    <option value="COOPERATIVAS_DE_CREDITO" <%if(tipoEntidadBancaria==tipoEntidadBancaria.COOPERATIVAS_DE_CREDITO){out.print("selected");}%>>COOPERATIVAS_DE_CREDITO</option>
+                    <option value="ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO" <%if(tipoEntidadBancaria==tipoEntidadBancaria.ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO){ out.print("selected");}%> >ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO</option>              
                 </select>
                 <br /><br />
                 <button type="submit" class="btn">Insertar</button>
