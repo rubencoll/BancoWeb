@@ -6,7 +6,9 @@ and open the template in the editor.
 -->
 <hibernate-mapping>
     <class name="com.fpmislata.daw2.bancoweb.negocio.EntidadBancaria" table="EntidadBancaria">
-        <id column="idEntidadBancaria" name="idEntidadBancaria" type="integer"/>
+        <id column="idEntidadBancaria" name="idEntidadBancaria" >
+            <generator class="identity" />
+        </id>
         <property name="codigoEntidadBancaria"/>
         <property name="nombre"/>
         <property name="cif"/>

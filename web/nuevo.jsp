@@ -13,13 +13,28 @@
     </head>
     <body>
         <h1>Insertar una Entidad Bancaria</h1>
-        <form>
-            
-                <input class="input-mini" type="text" placeholder="Identificador Entidad Bancaria"><br />
-                <input class="input-small" type="text" placeholder="Codigo"><br />
-                <input class="input-medium" type="text" placeholder="Nombre"><br />
-                <input class="input-large" type="text" placeholder="CIF"><br />
-                <input class="input-xlarge" type="text" placeholder="Tipo Entidad"><br />
-     </form>
+        <form action="insert.jsp">
+            <fieldset>
+                <legend>Insertar Una nueva Entidad Bancaria</legend>            
+                <label>Codigo</label>
+                <input type="text" placeholder="Codigo de la Entidad." name="codigo">   
+                <br />
+                <br />
+                <label>Nombre</label>
+                <input type="text" placeholder="Nombre de la Entidad." name="nombre">   
+                <br /><br />
+                <label>CIF</label>
+                <input type="text" placeholder="CIF de la Entidad." name="cif">   
+                <br /><br />
+                <select name="tipo">
+                    <option value="BANCO">BANCO</option>
+                    <option value="CAJA_DE_AHORRO">CAJA_DE_AHORRO</option>
+                    <option value="COOPERATIVAS_DE_CREDITO">COOPERATIVAS_DE_CREDITO</option>
+                    <option value="ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO">ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO</option>              
+                </select>
+                <br /><br />
+                <button type="submit" class="btn">Insertar</button>
+            </fieldset>
+        </form>
     </body>
 </html>

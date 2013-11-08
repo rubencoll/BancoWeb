@@ -10,20 +10,20 @@
 
     //Prueba para buscar una entidad Bancaria mediante ID
 
-    int idEntidadBancariaBuscarda = 3;
+    //int idEntidadBancariaBuscarda = 3;
 
     EntidadBancariaDAO entidadBancariaDAO = new EntidadBancariaDAOImplHibernate();
     //GenericDAO genericDao = new EntidadBancariaDAOImplJDBC();
 
-    EntidadBancaria entidadBancariaBuscada = new EntidadBancaria();
-    entidadBancariaBuscada = entidadBancariaDAO.read(idEntidadBancariaBuscarda);
+    // EntidadBancaria entidadBancariaBuscada = new EntidadBancaria();
+    //entidadBancariaBuscada = entidadBancariaDAO.read(idEntidadBancariaBuscarda);
 
 
-    int idEntidadBancaria = entidadBancariaBuscada.getIdEntidadBancaria();
-    String codigo = entidadBancariaBuscada.getCodigoEntidadBancaria();
-    String nombre = entidadBancariaBuscada.getNombre();
-    // TipoEntidadBancaria tipoEntidadBancaria = entidadBancariaBuscada.getTipoEntidadBancaria();
-
+    /*int idEntidadBancaria = entidadBancariaBuscada.getIdEntidadBancaria();
+     String codigo = entidadBancariaBuscada.getCodigoEntidadBancaria();
+     String nombre = entidadBancariaBuscada.getNombre();
+     // TipoEntidadBancaria tipoEntidadBancaria = entidadBancariaBuscada.getTipoEntidadBancaria();
+     */
 
 
     //Mostrar muchas entidades bancarias    
@@ -87,11 +87,14 @@
             <form class="form-search" method="GET" action="index.jsp">
                 <input name="nombre" type="text" class="input-medium search-query">
                 <button type="submit" class="btn">Buscar</button>
-               
+
             </form>
         </div>
         <div class="cCentrado" >
-             <a href="nuevo.jsp" class="btn" >Insertar Entidad</a>
+            <a href="nuevo.jsp" class="btn" >Insertar Entidad</a>
+        </div>
+        <div class="cCentrado" >
+            <a href="actualizar.jsp" class="btn" >Actualizar Entidad</a>
         </div>
         <br /><br />
         <hr>
@@ -130,6 +133,7 @@
             <th>TIPO</th>
             <th>CIF</th>
             <th>BORRAR</th>
+            <th>ACTUALIZAR</th>
                 <%
 
                     for (EntidadBancaria entidadBancaria : entidadBancariaBuscadaGet) {
@@ -141,6 +145,7 @@
                 <td><%= entidadBancaria.getTipoEntidadBancaria()%></td>       
                 <td><%= entidadBancaria.getCif()%> </td>
                 <td><a href="borrar.jsp?idEntidadBancaria=<%= entidadBancaria.getIdEntidadBancaria()%>" class="btn" >Borrar</a></td>
+                <td><a href="actualizar.jsp?idEntidadBancaria=<%= entidadBancaria.getIdEntidadBancaria()%>" class="btn" >Editar</a></td>
             </tr>
             <%
                 }
