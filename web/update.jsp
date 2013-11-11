@@ -62,7 +62,7 @@
 
             </tr>
         </table>
-         
+         &nbsp;&nbsp; <a href="index.jsp" class="btn" >Volver</a>
          
     </body>
 </html>

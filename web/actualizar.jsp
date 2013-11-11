@@ -57,9 +57,9 @@
                     <option value="ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO" <%if(tipoEntidadBancaria==tipoEntidadBancaria.ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO){ out.print("selected");}%> >ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO</option>              
                 </select>
                 <br /><br />
-                <button type="submit" class="btn">Actualizar</button>
+                <button type="submit" class="btn">Actualizar</button> &nbsp;&nbsp; <a href="index.jsp" class="btn" >Volver</a>
             </fieldset>
         </form>
-                <a href="index.jsp" class="btn" >Volver</a>
+                
     </body>
 </html>
