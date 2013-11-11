@@ -46,7 +46,7 @@
     </head>
     <body>
          <h1>Se ha actualizado con exito</h1>
-         
+         <br /><br />
         <table class="table">
             <th>IDENTIFICADOR</th>
             <th>CODIGO</th>

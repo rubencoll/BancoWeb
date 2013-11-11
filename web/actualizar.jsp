@@ -31,10 +31,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Actualizar</title>
-        
+        <link href="css/bootstrap.css" rel="stylesheet" >
     </head>
     <body>
         <h1>Editar una Entidad Bancaria</h1>
+         <br /><br />
         <form action="update.jsp">
             <fieldset>
                 <legend>Insertar Una nueva Entidad Bancaria</legend>            
@@ -59,5 +60,6 @@
                 <button type="submit" class="btn">Actualizar</button>
             </fieldset>
         </form>
+                <a href="index.jsp" class="btn" >Volver</a>
     </body>
 </html>

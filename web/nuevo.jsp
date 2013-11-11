@@ -14,6 +14,7 @@
     </head>
     <body>
         <h1>Insertar una Entidad Bancaria</h1>
+        <br /><br />
         <form action="insert.jsp">
             <fieldset>
                 <legend>Insertar Una nueva Entidad Bancaria</legend>            
