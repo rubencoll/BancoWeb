@@ -37,9 +37,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>JInsert</title>
+        <link href="css/bootstrap.css" rel="stylesheet" >
     </head>
     <body>
          <h1>Se ha insertado con exito</h1>
+         
+         <table class="table">
+            <th>IDENTIFICADOR</th>
+            <th>CODIGO</th>
+            <th>NOMBRE</th>
+            <th>TIPO</th>
+            <th>CIF</th>
+            <tr>
+                <td><%= entidadBancaria.getIdEntidadBancaria()%></td>
+                <td><%= entidadBancaria.getCodigoEntidadBancaria()%></td>
+                <td><%= entidadBancaria.getNombre()%></td>
+                <td><%= entidadBancaria.getTipoEntidadBancaria()%></td>      
+                <td><%= entidadBancaria.getCif()%></td>
+
+            </tr>
+        </table>
     </body>
 </html>

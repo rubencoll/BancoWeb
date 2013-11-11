@@ -60,7 +60,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Index</title>
         <link href="css/bootstrap.css" rel="stylesheet" >
         <style type="text/css">
             .cCentrado{
@@ -92,9 +92,6 @@
         </div>
         <div class="cCentrado" >
             <a href="nuevo.jsp" class="btn" >Insertar Entidad</a>
-        </div>
-        <div class="cCentrado" >
-            <a href="actualizar.jsp" class="btn" >Actualizar Entidad</a>
         </div>
         <br /><br />
         <hr>

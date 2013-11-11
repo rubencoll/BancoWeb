@@ -30,14 +30,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Actualizar</title>
+        
     </head>
     <body>
         <h1>Editar una Entidad Bancaria</h1>
-        <form action="insert.jsp">
+        <form action="update.jsp">
             <fieldset>
                 <legend>Insertar Una nueva Entidad Bancaria</legend>            
                 <label>Codigo</label>
+                <input type="hidden" name="idEntidadBancaria" value="<%=idEntidadBancaria%>" >
                 <input type="text" placeholder="Codigo de la Entidad." name="codigo" value="<%=codigo%>">   
                 <br />
                 <br />
@@ -54,7 +56,7 @@
                     <option value="ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO" <%if(tipoEntidadBancaria==tipoEntidadBancaria.ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO){ out.print("selected");}%> >ESTABLECIMIENTOS_FINANCIEROS_DE_CREDITO</option>              
                 </select>
                 <br /><br />
-                <button type="submit" class="btn">Insertar</button>
+                <button type="submit" class="btn">Actualizar</button>
             </fieldset>
         </form>
     </body>
