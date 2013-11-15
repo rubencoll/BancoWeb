@@ -82,7 +82,7 @@
                     <label>CIF</label>
                     <input type="text" placeholder="CIF de la Entidad." name="cif" value="<%=cif%>">   
                     <br /><br />
-                    <select name="tipo">
+                    <select name="tipoEntidadBancaria">
                             <option value="BANCO" <%if (tipoEntidadBancaria == tipoEntidadBancaria.BANCO) {
                                 out.print("selected");
                             }%> >BANCO</option>

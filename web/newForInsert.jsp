@@ -60,7 +60,7 @@
                     <label>CIF</label>
                     <input type="text" placeholder="CIF de la Entidad." name="cif">   
                     <br /><br />
-                    <select name="tipo">
+                    <select name="tipoEntidadBancaria">
                         <option value="BANCO">BANCO</option>
                         <option value="CAJA_DE_AHORRO">CAJA_DE_AHORRO</option>
                         <option value="COOPERATIVAS_DE_CREDITO">COOPERATIVAS_DE_CREDITO</option>

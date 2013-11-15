@@ -18,7 +18,7 @@
     String codigo = request.getParameter("codigo");
     String nombre = request.getParameter("nombre");
     String cif = request.getParameter("cif");
-    TipoEntidadBancaria tipoEntidadBancaria = TipoEntidadBancaria.valueOf(request.getParameter("tipo"));
+    TipoEntidadBancaria tipoEntidadBancaria = TipoEntidadBancaria.valueOf(request.getParameter("tipoEntidadBancaria"));
 
     EntidadBancariaDAO entidadBancariaDAO = new EntidadBancariaDAOImplHibernate();
 
