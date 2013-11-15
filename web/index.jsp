@@ -8,47 +8,18 @@
 
 <%
 
-    //Prueba para buscar una entidad Bancaria mediante ID
-
-    //int idEntidadBancariaBuscarda = 3;
-
     EntidadBancariaDAO entidadBancariaDAO = new EntidadBancariaDAOImplHibernate();
-    //GenericDAO genericDao = new EntidadBancariaDAOImplJDBC();
-
-    // EntidadBancaria entidadBancariaBuscada = new EntidadBancaria();
-    //entidadBancariaBuscada = entidadBancariaDAO.read(idEntidadBancariaBuscarda);
-
-
-    /*int idEntidadBancaria = entidadBancariaBuscada.getIdEntidadBancaria();
-     String codigo = entidadBancariaBuscada.getCodigoEntidadBancaria();
-     String nombre = entidadBancariaBuscada.getNombre();
-     // TipoEntidadBancaria tipoEntidadBancaria = entidadBancariaBuscada.getTipoEntidadBancaria();
-     */
-
 
     //Mostrar muchas entidades bancarias    
 
-    List<EntidadBancaria> entidadesBancarias = new ArrayList<EntidadBancaria>();
+    List<EntidadBancaria> entidadesBancarias;
 
     entidadesBancarias = entidadBancariaDAO.findAll();
-
-    /* for (EntidadBancaria entidadBancaria : entidadesBancarias) {
-
-     out.println(entidadBancaria.getIdEntidadBancaria());
-     out.println(entidadBancaria.getCodigoEntidadBancaria());
-     out.println(entidadBancaria.getNombre());
-     out.println(entidadBancaria.getTipoEntidadBancaria());
-     out.println(entidadBancaria.getCif());
-     }*/
-
-    //Prueba con Data Source
-
-
-
+    
     //Para pasar un dato por el Get de la URL 
 
     String nombreB = request.getParameter("nombre");
-    List<EntidadBancaria> entidadBancariaBuscadaGet = new ArrayList<EntidadBancaria>();
+    List<EntidadBancaria> entidadBancariaBuscadaGet;
 
     entidadBancariaBuscadaGet = entidadBancariaDAO.findByNombre(nombreB);
 
