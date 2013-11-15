@@ -1,7 +1,7 @@
 <%-- 
     Document   : borrar
     Created on : 07-nov-2013, 9:58:31
-    Author     : alumno
+    Author     : Ruben Coll Tovar
 --%>
 <%@page import="com.fpmislata.daw2.bancoweb.datos.EntidadBancariaDAOImplHibernate"%>
 <%@page import="com.fpmislata.daw2.bancoweb.negocio.EntidadBancaria"%>
