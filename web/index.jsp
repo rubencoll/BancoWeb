@@ -106,7 +106,7 @@
                 </form>
             </div>
             <div class="cCentrado" >
-                <a href="nuevo.jsp" class="btn" >Insertar Entidad</a>
+                <a href="newForInsert.jsp" class="btn" >Insertar Entidad</a>
             </div>
             <br /><br />
             <br /><br />
@@ -134,8 +134,8 @@
                     <td><%= entidadBancaria.getNombre()%></td>
                     <td><%= entidadBancaria.getTipoEntidadBancaria()%></td>       
                     <td><%= entidadBancaria.getCif()%> </td>
-                    <td><a href="borrar.jsp?idEntidadBancaria=<%= entidadBancaria.getIdEntidadBancaria()%>" class="btn" >Borrar</a></td>
-                    <td><a href="actualizar.jsp?idEntidadBancaria=<%= entidadBancaria.getIdEntidadBancaria()%>" class="btn" >Editar</a></td>
+                    <td><a href="delete.jsp?idEntidadBancaria=<%= entidadBancaria.getIdEntidadBancaria()%>" class="btn" >Borrar</a></td>
+                    <td><a href="newForUpdate.jsp?idEntidadBancaria=<%= entidadBancaria.getIdEntidadBancaria()%>" class="btn" >Editar</a></td>
                 </tr>
                 <%
                     }
