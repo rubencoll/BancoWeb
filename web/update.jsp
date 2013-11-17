@@ -70,7 +70,7 @@
             }
 
             body {
-                background-image: url('img/texturas_metal.JPG');
+                background-image: url('img/dark_blue.JPG');
 
             }
         </style>
