@@ -87,11 +87,9 @@ public class GenericDAOImplHibernate<T, ID extends Serializable> implements Gene
     @Override
     public List<T> findAll() {
 
-        Session session = sessionFactory.getCurrentSession(); //Abrimos la sesion
-
-        Query query = session.createQuery("SELECT t FROM ? t");
+        Session session = sessionFactory.getCurrentSession(); //Abrimos la sesion   
         
-        query.setString(0, getEntityClass().getName());
+        Query query = session.createQuery("SELECT t FROM "+getEntityClass().getName()+" t");
         
         List<T> tList = query.list(); 
 
