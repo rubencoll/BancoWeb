@@ -23,8 +23,10 @@ public class EntidadBancariaDAOImplHibernate extends GenericDAOImplHibernate<Ent
 
         Session session = sessionFactory.getCurrentSession(); //Abrimos la sesion
 
-        Query query = session.createQuery("SELECT entidadBancaria FROM EntidadBancaria entidadBancaria WHERE codigoentidadbancaria='" + codigo + "'");
+        Query query = session.createQuery("SELECT entidadBancaria FROM EntidadBancaria entidadBancaria WHERE codigoentidadbancaria=?");
 
+        query.setString(0, codigo);
+        
         List<EntidadBancaria> entidadesBancarias = query.list();
 
         return entidadesBancarias;
@@ -36,10 +38,11 @@ public class EntidadBancariaDAOImplHibernate extends GenericDAOImplHibernate<Ent
         
         Session session = sessionFactory.getCurrentSession(); //Abrimos la sesion
 
-        Query query = session.createQuery("SELECT entidadBancaria FROM EntidadBancaria entidadBancaria WHERE nombre LIKE '%" + nombre + "%'");
+        Query query = session.createQuery("SELECT entidadBancaria FROM EntidadBancaria entidadBancaria WHERE nombre LIKE '%?%'");
 
+        query.setString(0, nombre);
+  
         List<EntidadBancaria> entidadesBancarias = query.list();
-
 
         return entidadesBancarias;
     }
