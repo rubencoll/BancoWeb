@@ -18,10 +18,10 @@
     
     //Para pasar un dato por el Get de la URL 
 
-    String nombreB = request.getParameter("nombre");
+    String nombreBuscado = request.getParameter("nombre");
     List<EntidadBancaria> entidadBancariaBuscadaGet;
 
-    entidadBancariaBuscadaGet = entidadBancariaDAO.findByNombre(nombreB);
+    entidadBancariaBuscadaGet = entidadBancariaDAO.findByNombre(nombreBuscado);
 
 
 %>
@@ -83,9 +83,9 @@
             <br /><br />
             <hr>
 
-            <h1>Entidad Bancaria Buscada: <% if (nombreB == null) {
+            <h1>Entidad Bancaria Buscada: <% if (nombreBuscado == null) {
                 } else {
-                    out.print(nombreB);
+                    out.print(nombreBuscado);
                 }%></h1>
             <table class="table">
                 <th>IDENTIFICADOR</th>
