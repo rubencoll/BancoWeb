@@ -10,8 +10,6 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-
-
 /**
  *
  * @author alumno
@@ -26,26 +24,37 @@ public class EntidadBancariaDAOImplHibernate extends GenericDAOImplHibernate<Ent
         Query query = session.createQuery("SELECT entidadBancaria FROM EntidadBancaria entidadBancaria WHERE codigoentidadbancaria=?");
 
         query.setString(0, codigo);
-        
+
         List<EntidadBancaria> entidadesBancarias = query.list();
 
         return entidadesBancarias;
     }
 
-    
     @Override
     public List<EntidadBancaria> findByNombre(String nombre) {
+
+
+        if (nombre == null) {
+            
+            Session session = sessionFactory.getCurrentSession(); //Abrimos la sesion
+
+            Query query = session.createQuery("SELECT entidadBancaria FROM EntidadBancaria entidadBancaria");
+
+            List<EntidadBancaria> entidadesBancarias = query.list();
+            
+            return entidadesBancarias;
+            
+        } else {
+            Session session = sessionFactory.getCurrentSession(); //Abrimos la sesion
+
+            Query query = session.createQuery("SELECT entidadBancaria FROM EntidadBancaria entidadBancaria WHERE nombre LIKE ?");
+
+            query.setString(0, "%" + nombre + "%");
+            
+            List<EntidadBancaria> entidadesBancarias = query.list();
+            
+            return entidadesBancarias;
+        }
         
-        Session session = sessionFactory.getCurrentSession(); //Abrimos la sesion
-
-        Query query = session.createQuery("SELECT entidadBancaria FROM EntidadBancaria entidadBancaria WHERE nombre LIKE ?");
-
-        query.setString(0, "%"+nombre+"%");
-  
-        List<EntidadBancaria> entidadesBancarias = query.list();
-
-        return entidadesBancarias;
     }
-    
-
 }
