@@ -7,6 +7,9 @@ package com.fpmislata.daw2.bancoweb.negocio;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotBlank;
+
 
 /**
  *
@@ -16,7 +19,11 @@ public class EntidadBancaria implements Serializable {
 
     private int idEntidadBancaria;
     private List<SucursalBancaria> sucursalesBancarias = new ArrayList<>();
+    
+    @Size(min = 3, max = 20)
+    @NotBlank
     private String codigoEntidadBancaria;
+    @Size(min = 2, max = 30)
     private String nombre;
     private String cif;
     private TipoEntidadBancaria tipoEntidadBancaria;
